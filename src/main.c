@@ -70,7 +70,7 @@ void save_savefile() {
 void draw_ui() {
     if (fds.windowActive == true) GuiDisable();
     GuiPanel((Rectangle) {5, 5, GetScreenWidth()-10, 30}, NULL);
-    if (GuiButton((Rectangle) {10, 10, 110, 20}, "Reload Savefile")) {
+    if (GuiButton((Rectangle) {10, 10, 110, 20}, savefile == 0 ? "Load Savefile" : "Reload Savefile")) {
         if (FileExists(TextFormat("%s\\Documents\\My Games\\HotlineMiami\\SaveData.sav", getenv("USERPROFILE")))) {
             savefile = load_save(TextFormat("%s\\Documents\\My Games\\HotlineMiami\\SaveData.sav", getenv("USERPROFILE")));
             load_globals(savefile);
